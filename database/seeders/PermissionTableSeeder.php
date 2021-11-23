@@ -1,5 +1,7 @@
 <?php
+
 namespace Database\Seeders;
+
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -7,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class PermissionTableSeeder extends Seeder
 {
     /**
-     * Run the database seeders.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -47,6 +49,14 @@ class PermissionTableSeeder extends Seeder
         $createPostCategories = Permission::create([ 'name' => 'create_post_categories', 'display_name' => 'Create category', 'route' => 'post_categories/create', 'module' => 'post_categories', 'as' => 'post_categories.create', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostCategories->id, 'appear' => '0', 'ordering' => '0',]);
         $updatePostCategories = Permission::create([ 'name' => 'update_post_categories', 'display_name' => 'Update category', 'route' => 'post_categories/{post_categories}/edit', 'module' => 'post_categories', 'as' => 'post_categories.edit', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostCategories->id, 'appear' => '0', 'ordering' => '0', ]);
         $destroyPostCategories = Permission::create([ 'name' => 'delete_post_categories', 'display_name' => 'Delete category', 'route' => 'post_categories/{post_categories}', 'module' => 'post_categories', 'as' => 'post_categories.delete', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostCategories->id, 'appear' => '0', 'ordering' => '0', ]);
+
+        // POSTS TAGS
+        $managePostTags = Permission::create([ 'name' => 'manage_post_tags', 'display_name' => 'Tags', 'route' => 'post_tags', 'module' => 'post_tags', 'as' => 'post_tags.index', 'icon' => 'fas fa-tags', 'parent' => $managePosts->id, 'parent_original' => '0', 'appear' => '0', 'ordering' => '16', ]);
+        $managePostTags->parent_show = $managePostTags->id; $managePostTags->save();
+        $showPostTags = Permission::create([ 'name' => 'show_post_tags', 'display_name' => 'Tags', 'route' => 'post_tags', 'module' => 'post_tags', 'as' => 'post_tags.index', 'icon' => 'fas fa-tags', 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostTags->id, 'appear' => '1', 'ordering' => '0', ]);
+        $createPostTags = Permission::create([ 'name' => 'create_post_tags', 'display_name' => 'Create Tag', 'route' => 'post_tags/create', 'module' => 'post_tags', 'as' => 'post_tags.create', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostTags->id, 'appear' => '0', 'ordering' => '0',]);
+        $updatePostTags = Permission::create([ 'name' => 'update_post_tags', 'display_name' => 'Update Tag', 'route' => 'post_tags/{post_tags}/edit', 'module' => 'post_tags', 'as' => 'post_tags.edit', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostTags->id, 'appear' => '0', 'ordering' => '0', ]);
+        $destroyPostTags = Permission::create([ 'name' => 'delete_post_tags', 'display_name' => 'Delete Tag', 'route' => 'post_tags/{post_tags}', 'module' => 'post_tags', 'as' => 'post_tags.delete', 'icon' => null, 'parent' => $managePosts->id, 'parent_show' => $managePosts->id, 'parent_original' => $managePostTags->id, 'appear' => '0', 'ordering' => '0', ]);
 
         // PAGES
         $managePages = Permission::create([ 'name' => 'manage_pages', 'display_name' => 'Pages', 'route' => 'pages', 'module' => 'pages', 'as' => 'pages.index', 'icon' => 'fas fa-file', 'parent' => '0', 'parent_original' => '0', 'appear' => '1', 'ordering' => '20', ]);

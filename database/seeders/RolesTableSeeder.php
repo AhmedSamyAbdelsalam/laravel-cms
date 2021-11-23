@@ -1,5 +1,7 @@
 <?php
+
 namespace Database\Seeders;
+
 use App\Models\Role;
 use App\Models\User;
 use Carbon\Carbon;
@@ -9,7 +11,7 @@ use Illuminate\Database\Seeder;
 class RolesTableSeeder extends Seeder
 {
     /**
-     * Run the database seeders.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -49,10 +51,10 @@ class RolesTableSeeder extends Seeder
         $user1 = User::create(['name' => 'Sami Mansour', 'username' => 'sami', 'email' => 'sami@bloggi.test', 'mobile' => '966500000003', 'email_verified_at' => Carbon::now(), 'password' => bcrypt('123123123'), 'status' => 1,]);
         $user1->attachRole($userRole);
 
-        $user2 = User::create(['name' => 'Mahmoud Hassan', 'username' => 'mahmoud', 'email' => 'mahmoud@bloggi.test', 'mobile' => '966500000004', 'email_verified_at' => Carbon::now(), 'password' => bcrypt('123123123'), 'status' => 1,]);
+        $user2 = User::create(['name' => 'Mansour Sami', 'username' => 'mansour', 'email' => 'mansour@bloggi.test', 'mobile' => '966500000004', 'email_verified_at' => Carbon::now(), 'password' => bcrypt('123123123'), 'status' => 1,]);
         $user2->attachRole($userRole);
 
-        $user3 = User::create(['name' => 'Khaled Ali', 'username' => 'khaled', 'email' => 'khaled@bloggi.test', 'mobile' => '966500000005', 'email_verified_at' => Carbon::now(), 'password' => bcrypt('123123123'), 'status' => 1,]);
+        $user3 = User::create(['name' => 'Mais Sami', 'username' => 'mais', 'email' => 'mais@bloggi.test', 'mobile' => '966500000005', 'email_verified_at' => Carbon::now(), 'password' => bcrypt('123123123'), 'status' => 1,]);
         $user3->attachRole($userRole);
 
         for ($i = 0; $i <10; $i++) {

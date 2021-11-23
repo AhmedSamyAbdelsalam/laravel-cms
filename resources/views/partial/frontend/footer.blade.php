@@ -13,32 +13,19 @@
                         </div>
                         <div class="footer__content">
                             <ul class="social__net social__net--2 d-flex justify-content-center">
-                                <li><a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a></li>
-                                <li><a href="https://google.com" target="_blank"><i class="bi bi-google"></i></a></li>
-                                <li><a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a></li>
-                                <li><a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                                <li><a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a></li>
+                                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                <li><a href="#"><i class="bi bi-youtube"></i></a></li>
                             </ul>
                             <ul class="mainmenu d-flex justify-content-center">
-{{--                                <li><a href="index.html">Trending</a></li>--}}
-{{--                                <li><a href="index.html">Best Seller</a></li>--}}
-{{--                                <li><a href="index.html">All Product</a></li>--}}
-{{--                                <li><a href="index.html">Wishlist</a></li>--}}
-{{--                                <li><a href="index.html">Blog</a></li>--}}
-{{--                                <li><a href="index.html">Contact</a></li>--}}
-                                <li class="drop with--one--item"><a href="{{ route('frontend.index') }}">Home</a></li>
-                                <li class="drop with--one--item"><a href="{{ route('frontend.', 'about-us') }}">About Us</a></li>
-                                <li class="drop with--one--item"><a href="{{ route('frontend.', 'our-vision') }}">Our Vision</a></li>
-                                <li class="drop"><a href="javascript:void(0);">Blog</a>
-                                    <div class="megamenu dropdown">
-                                        <ul class="item item01">
-                                            @foreach($global_categories as $global_category)
-                                                <li><a href="{{ route('frontend.category.posts', $global_category->slug) }}">{{ $global_category->name }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+                                <li><a href="index.html">Trending</a></li>
+                                <li><a href="index.html">Best Seller</a></li>
+                                <li><a href="index.html">All Product</a></li>
+                                <li><a href="index.html">Wishlist</a></li>
+                                <li><a href="index.html">Blog</a></li>
+                                <li><a href="index.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>

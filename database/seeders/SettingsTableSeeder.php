@@ -1,12 +1,14 @@
 <?php
+
 namespace Database\Seeders;
+
 use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
 class SettingsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeders.
+     * Run the database seeds.
      *
      * @return void
      */

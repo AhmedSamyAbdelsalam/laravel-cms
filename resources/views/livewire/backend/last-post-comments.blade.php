@@ -23,7 +23,7 @@
                         <tbody>
                         @forelse($posts as $post)
                         <tr>
-                            <td><a href="{{ route('admin.', $post->id) }}">{{ \Illuminate\Support\Str::limit($post->title, 30, '...') }}</a></td>
+                            <td><a href="{{ route('admin.posts.show', $post->id) }}">{{ \Illuminate\Support\Str::limit($post->title, 30, '...') }}</a></td>
                             <td>{{ $post->comments_count }}</td>
                             <td>{{ $post->status() }}</td>
                             <td>{{ $post->created_at->diffForHumans() }}</td>

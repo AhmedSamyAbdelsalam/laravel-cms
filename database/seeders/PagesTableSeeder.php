@@ -1,5 +1,7 @@
 <?php
+
 namespace Database\Seeders;
+
 use App\Models\Page;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -7,7 +9,7 @@ use Illuminate\Database\Seeder;
 class PagesTableSeeder extends Seeder
 {
     /**
-     * Run the database seeders.
+     * Run the database seeds.
      *
      * @return void
      */

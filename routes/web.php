@@ -20,7 +20,6 @@ use App\Http\Controllers\Backend\ContactUsController;
 use App\Http\Controllers\Backend\UsersController as BackendUsersController;
 use App\Http\Controllers\Backend\SupervisorsController;
 use App\Http\Controllers\Backend\SettingsController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/',                                         [IndexController::class, 'index'])->name('frontend.index');
 // Authentication Routes...
@@ -93,12 +92,8 @@ Route::get('/tag/{tag_slug}',                           [IndexController::class,
 Route::get('/archive/{date}',                           [IndexController::class, 'archive'])->name('frontend.archive.posts');
 Route::get('/author/{username}',                        [IndexController::class, 'author'])->name('frontend.author.posts');
 Route::get('/search',                                   [IndexController::class, 'search'])->name('frontend.search');
-Route::get('/{post}',                                   [IndexController::class, 'post_show'])->name('frontend.');
+Route::get('/{post}',                                   [IndexController::class, 'post_show'])->name('frontend.posts.show');
 Route::post('/{post}',                                  [IndexController::class, 'store_comment'])->name('frontend.posts.add_comment');
 
 
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

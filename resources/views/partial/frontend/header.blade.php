@@ -13,8 +13,8 @@
                 <nav class="mainmenu__nav">
                     <ul class="meninmenu d-flex justify-content-start">
                         <li class="drop with--one--item"><a href="{{ route('frontend.index') }}">Home</a></li>
-                        <li class="drop with--one--item"><a href="{{ route('frontend.', 'about-us') }}">About Us</a></li>
-                        <li class="drop with--one--item"><a href="{{ route('frontend.', 'our-vision') }}">Our Vision</a></li>
+                        <li class="drop with--one--item"><a href="{{ route('frontend.posts.show', 'about-us') }}">About Us</a></li>
+                        <li class="drop with--one--item"><a href="{{ route('frontend.posts.show', 'our-vision') }}">Our Vision</a></li>
                         <li class="drop"><a href="javascript:void(0);">Blog</a>
                             <div class="megamenu dropdown">
                                 <ul class="item item01">
@@ -72,8 +72,8 @@
                 <nav class="mobilemenu__nav">
                     <ul class="meninmenu">
                         <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                        <li><a href="{{ route('frontend.', 'about-us') }}">About Us</a></li>
-                        <li><a href="{{ route('frontend.', 'our-vision') }}">Our Vision</a></li>
+                        <li><a href="{{ route('frontend.posts.show', 'about-us') }}">About Us</a></li>
+                        <li><a href="{{ route('frontend.posts.show', 'our-vision') }}">Our Vision</a></li>
                         <li><a href="javascript:void(0);">Blog</a>
                             <ul>
                                 <li><a href="#">Un-Categorized</a></li>

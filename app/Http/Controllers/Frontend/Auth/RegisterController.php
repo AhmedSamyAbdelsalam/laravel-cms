@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -94,6 +95,7 @@ class RegisterController extends Controller
                 $user->update(['user_image' => $filename]);
             }
         }
+        $user->attachRole(Role::whereName('user')->first()->id);
 
         return $user;
 
@@ -101,6 +103,10 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
+        if($request->wantsJson()){
+
+            return response()->json(['errors'=>false , 'message'=>'Your account registered successfully, Please check your email to activate your account.']);
+        }
         return redirect()->route('frontend.index')->with([
             'message' => 'Your account registered successfully, Please check your email to activate your account.',
             'alert-type' => 'success'

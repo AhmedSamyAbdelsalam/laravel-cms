@@ -47,5 +47,4 @@ function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = false, $atts
         $url .= ' />';
     }
     return $url;
-
 }
